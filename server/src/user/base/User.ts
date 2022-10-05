@@ -13,7 +13,7 @@ import { ObjectType, Field } from "@nestjs/graphql";
 import { ApiProperty } from "@nestjs/swagger";
 import { IsDate, IsString, IsOptional, IsJSON } from "class-validator";
 import { Type } from "class-transformer";
-import { GraphQLJSONObject } from "graphql-type-json";
+import { GraphQLJSON } from "graphql-type-json";
 import { JsonValue } from "type-fest";
 @ObjectType()
 class User {
@@ -59,7 +59,7 @@ class User {
     required: true,
   })
   @IsJSON()
-  @Field(() => GraphQLJSONObject)
+  @Field(() => GraphQLJSON)
   roles!: JsonValue;
 
   @ApiProperty({

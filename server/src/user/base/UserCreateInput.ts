@@ -12,7 +12,7 @@ https://docs.amplication.com/docs/how-to/custom-code
 import { InputType, Field } from "@nestjs/graphql";
 import { ApiProperty } from "@nestjs/swagger";
 import { IsString, IsOptional, IsJSON } from "class-validator";
-import { GraphQLJSONObject } from "graphql-type-json";
+import { GraphQLJSON } from "graphql-type-json";
 import { InputJsonValue } from "../../types";
 @InputType()
 class UserCreateInput {
@@ -50,7 +50,7 @@ class UserCreateInput {
     required: true,
   })
   @IsJSON()
-  @Field(() => GraphQLJSONObject)
+  @Field(() => GraphQLJSON)
   roles!: InputJsonValue;
 
   @ApiProperty({
